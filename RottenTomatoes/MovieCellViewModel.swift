@@ -14,6 +14,7 @@ class MovieCellViewModel: NSObject {
     // MARK: Properties
     
     let title: Dynamic<String>
+    let imageURL: Dynamic<String>
     
     private let services: ViewModelServices
     
@@ -22,5 +23,6 @@ class MovieCellViewModel: NSObject {
     init(services: ViewModelServices, movie: Movie) {
         self.services = services
         self.title = Dynamic(movie.title)
+        self.imageURL = Dynamic(movie.imageURL)
     }
 }

@@ -7,20 +7,23 @@
 //
 
 import UIKit
+import Bond
 
-class MovieTableViewCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell, ReactiveView {
 
     @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var movieThumbnailImage: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    //var movieThumbnailURL: Dynamic<String>
     
+    func bindViewModel(viewModel: AnyObject) {
+        let movieCellViewModel = viewModel as MovieCellViewModel
+        
+        movieCellViewModel.title ->> movieTitleLabel
+        movieCellViewModel.imageURL ->> {
+            [unowned self] (imageURL: String) in
+            self.movieThumbnailImage.setImageWithURL(NSURL(string: imageURL))
+        }
+        
+    }
 }

@@ -3,3 +3,4 @@
 //
 
 #import <JGProgressHUD/JGProgressHUD.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>

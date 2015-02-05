@@ -62,8 +62,8 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate {
     
     // MARK: UISearchBarDelegate Impl
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.view.endEditing(true)
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {        
+        moviesSearchBar.resignFirstResponder()
         let hud = JGProgressHUD(style: JGProgressHUDStyle.Light)
         hud.textLabel.text = "Loading"
         hud.showInView(view)
@@ -78,9 +78,13 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate {
         // From Bond example here: https://github.com/SwiftBond/Bond/blob/master/README.md#what-can-it-do
         viewModel.movies.map {
             [unowned self] (viewModel: MovieCellViewModel) -> MovieTableViewCell in
-            let cell = self.moviesListTableView.dequeueReusableCellWithIdentifier("com.jl.movieCell") as MovieTableViewCell
-            viewModel.title ->> cell.movieTitleLabel
-            return cell
+            let cell = self.moviesListTableView.dequeueReusableCellWithIdentifier("com.jl.movieCell") as UITableViewCell
+            
+            if let reactiveView = cell as? ReactiveView {
+                reactiveView.bindViewModel(viewModel)
+            }
+            
+            return cell as MovieTableViewCell
         } ->> self.moviesListTableView
     }
     

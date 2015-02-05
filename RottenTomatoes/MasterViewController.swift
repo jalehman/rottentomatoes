@@ -27,16 +27,9 @@ class MasterViewController: UITabBarController {
         tabViewControllers.append(moviesListViewController)
         tabViewControllers.append(dvdListViewController)
 
-        super.init(nibName: nil, bundle: nil)
-        //super.init(nibName: "", bundle: nil)
+        super.init(nibName: "MasterViewController", bundle: nil)
     }
     
-    override func loadView() {
-        var contentView: UIView = UIView(frame: CGRectZero)
-        contentView.backgroundColor = UIColor.blueColor()
-        self.view = contentView
-    }
-
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -45,12 +38,14 @@ class MasterViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = .None        
+        self.edgesForExtendedLayout = .None
+        
+        self.setViewControllers(tabViewControllers, animated: false)
+        
+        tabViewControllers[0].tabBarItem = UITabBarItem(title: "Movies", image: UIImage(), tag: 0)
+        tabViewControllers[1].tabBarItem = UITabBarItem(title: "DVDs", image: UIImage(), tag: 1)
+        
     }
     
-    override func viewDidAppear(animated: Bool) {
-        self.setViewControllers(tabViewControllers, animated: true)
-    }
-
 }
 

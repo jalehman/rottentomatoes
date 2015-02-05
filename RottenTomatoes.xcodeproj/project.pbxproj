@@ -22,6 +22,7 @@
 		2F919EC01A83F77100EDDCEC /* DVDListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EBF1A83F77100EDDCEC /* DVDListViewModel.swift */; };
 		2F919EC31A83F79100EDDCEC /* DVDListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EC11A83F79100EDDCEC /* DVDListViewController.swift */; };
 		2F919EC41A83F79100EDDCEC /* DVDListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F919EC21A83F79100EDDCEC /* DVDListViewController.xib */; };
+		2F919EC61A84020200EDDCEC /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F919EC51A84020200EDDCEC /* MasterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		2F919EBF1A83F77100EDDCEC /* DVDListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDListViewModel.swift; sourceTree = "<group>"; };
 		2F919EC11A83F79100EDDCEC /* DVDListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDListViewController.swift; sourceTree = "<group>"; };
 		2F919EC21A83F79100EDDCEC /* DVDListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVDListViewController.xib; sourceTree = "<group>"; };
+		2F919EC51A84020200EDDCEC /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				2F919EB21A83F50400EDDCEC /* DVDList */,
 				2F919EB11A83F4EF00EDDCEC /* MoviesList */,
 				2F4599141A808518005CADE0 /* MasterViewController.swift */,
+				2F919EC51A84020200EDDCEC /* MasterViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F919EC61A84020200EDDCEC /* MasterViewController.xib in Resources */,
 				2F919EC41A83F79100EDDCEC /* DVDListViewController.xib in Resources */,
 				2F45991A1A808518005CADE0 /* Images.xcassets in Resources */,
 				2F919EBA1A83F62B00EDDCEC /* MoviesListViewController.xib in Resources */,

@@ -14,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DVDs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hF-NQ-sEf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DVDs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hF-NQ-sEf">
                     <rect key="frame" x="279" y="289" width="44" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="lbb-HP-GUf"/>
-                        <constraint firstAttribute="width" constant="44" id="mSD-9Z-DOk"/>
+                        <constraint firstAttribute="height" constant="21" id="3G1-98-ibm"/>
+                        <constraint firstAttribute="width" constant="44" id="sq6-sv-6DN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -27,8 +27,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="9hF-NQ-sEf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="279" id="fq9-Be-ETe"/>
-                <constraint firstItem="9hF-NQ-sEf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="289" id="rWG-wa-Adp"/>
+                <constraint firstAttribute="centerX" secondItem="9hF-NQ-sEf" secondAttribute="centerX" id="IGU-wO-Vxj"/>
+                <constraint firstAttribute="centerY" secondItem="9hF-NQ-sEf" secondAttribute="centerY" id="IUh-UH-Ef7"/>
             </constraints>
         </view>
     </objects>

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesListViewController" customModule="RottenTomatoes" customModuleProvider="target">
             <connections>
+                <outlet property="moviesListTableView" destination="ROo-TI-VdY" id="cIk-p9-VCB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,20 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRH-aj-yBM">
-                    <rect key="frame" x="272" y="289" width="55" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="TCM-vS-rxC"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-TI-VdY">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="gRH-aj-yBM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="55o-bO-vgl"/>
-                <constraint firstItem="gRH-aj-yBM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="289" id="Rhs-t4-feP"/>
+                <constraint firstItem="ROo-TI-VdY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AAX-72-ZiA"/>
+                <constraint firstItem="ROo-TI-VdY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lcq-cH-hxR"/>
+                <constraint firstAttribute="bottom" secondItem="ROo-TI-VdY" secondAttribute="bottom" id="PTY-47-SK4"/>
+                <constraint firstAttribute="trailing" secondItem="ROo-TI-VdY" secondAttribute="trailing" id="Q74-or-6V3"/>
             </constraints>
         </view>
     </objects>

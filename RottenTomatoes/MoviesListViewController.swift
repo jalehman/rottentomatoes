@@ -8,6 +8,7 @@
 
 import UIKit
 import Bond
+import JGProgressHUD
 
 class MoviesListViewController: UIViewController, UISearchBarDelegate {
     
@@ -62,8 +63,12 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate {
     // MARK: UISearchBarDelegate Impl
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.view.endEditing(true)
+        let hud = JGProgressHUD(style: JGProgressHUDStyle.Light)
+        hud.textLabel.text = "Loading"
+        hud.showInView(view)
         viewModel.fetchMovies(searchBar.text) {
-            self.view.endEditing(true); return
+            hud.dismiss()
         }
     }
     

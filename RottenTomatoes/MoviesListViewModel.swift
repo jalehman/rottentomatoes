@@ -30,7 +30,6 @@ class MoviesListViewModel: NSObject {
             self.movies.removeAll(true)
             
             for movie in results {
-                println(movie.title)
                 self.movies.append(MovieCellViewModel(services: self.services, movie: movie))
             }
             

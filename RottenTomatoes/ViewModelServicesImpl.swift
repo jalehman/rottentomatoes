@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import UIKit
+
+class ViewModelServicesImpl: ViewModelServices {
+    
+    // MARK: Properties
+    
+    private let navigationController: UINavigationController!
+    
+    // MARK: API
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    // MARK: ViewModelServices Implementation
+    
+    func pushViewModel(viewModel: AnyObject) {
+        
+    }
+}

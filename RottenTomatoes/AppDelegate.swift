@@ -12,11 +12,30 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navigationController: UINavigationController!
+    
+    var viewModel: MasterViewModel!
+    var viewModelServices: ViewModelServices!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        navigationController = UINavigationController()
+        
+        let viewController = createMasterViewController()
+        navigationController.pushViewController(viewController, animated: false)
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.makeKeyAndVisible()
+        window!.rootViewController = navigationController
+
         return true
+    }
+    
+    func createMasterViewController() -> MasterViewController {
+        viewModelServices = ViewModelServicesImpl(navigationController: navigationController)
+        viewModel = MasterViewModel(services: viewModelServices)                
+        
+        return MasterViewController(viewModel: viewModel)
     }
 
     func applicationWillResignActive(application: UIApplication) {

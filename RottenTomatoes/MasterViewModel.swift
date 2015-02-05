@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class MasterViewModel: NSObject {
+    
+    // MARK: Properties
+    
+    let moviesListViewModel: MoviesListViewModel
+    let dvdListViewModel: DVDListViewModel
+    
+    private let services: ViewModelServices
+    
+    // MARK: API
+    
+    init(services: ViewModelServices) {
+        self.services = services
+        self.moviesListViewModel = MoviesListViewModel(services: services)
+        self.dvdListViewModel = DVDListViewModel(services: services)
+    }
+}

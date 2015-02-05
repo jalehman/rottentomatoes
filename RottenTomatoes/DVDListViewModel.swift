@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class DVDListViewModel: NSObject {
+    
+    // MARK: Properties
+    
+    private let services: ViewModelServices
+    
+    // MARK: API
+    
+    init(services: ViewModelServices) {
+        self.services = services
+    }
+}

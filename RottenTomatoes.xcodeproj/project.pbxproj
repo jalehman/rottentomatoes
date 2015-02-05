@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		2F4599131A808518005CADE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4599121A808518005CADE0 /* AppDelegate.swift */; };
-		2F4599151A808518005CADE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4599141A808518005CADE0 /* ViewController.swift */; };
-		2F4599181A808518005CADE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4599161A808518005CADE0 /* Main.storyboard */; };
+		2F4599151A808518005CADE0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4599141A808518005CADE0 /* MasterViewController.swift */; };
 		2F45991A1A808518005CADE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4599191A808518005CADE0 /* Images.xcassets */; };
-		2F45991D1A808518005CADE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F45991B1A808518005CADE0 /* LaunchScreen.xib */; };
 		2F4599291A808519005CADE0 /* RottenTomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4599281A808519005CADE0 /* RottenTomatoesTests.swift */; };
+		2F45993D1A808989005CADE0 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4599381A80895D005CADE0 /* Bond.framework */; };
+		2F45993F1A8089E1005CADE0 /* Bond.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F4599381A80895D005CADE0 /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F919EAC1A83F00300EDDCEC /* ViewModelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EAB1A83F00300EDDCEC /* ViewModelServices.swift */; };
+		2F919EAE1A83F0BF00EDDCEC /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EAD1A83F0BF00EDDCEC /* MasterViewModel.swift */; };
+		2F919EB01A83F22700EDDCEC /* ViewModelServicesImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EAF1A83F22700EDDCEC /* ViewModelServicesImpl.swift */; };
+		2F919EB91A83F62B00EDDCEC /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EB71A83F62B00EDDCEC /* MoviesListViewController.swift */; };
+		2F919EBA1A83F62B00EDDCEC /* MoviesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F919EB81A83F62B00EDDCEC /* MoviesListViewController.xib */; };
+		2F919EBD1A83F6E100EDDCEC /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EBC1A83F6E100EDDCEC /* MoviesListViewModel.swift */; };
+		2F919EC01A83F77100EDDCEC /* DVDListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EBF1A83F77100EDDCEC /* DVDListViewModel.swift */; };
+		2F919EC31A83F79100EDDCEC /* DVDListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919EC11A83F79100EDDCEC /* DVDListViewController.swift */; };
+		2F919EC41A83F79100EDDCEC /* DVDListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F919EC21A83F79100EDDCEC /* DVDListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +32,61 @@
 			remoteGlobalIDString = 2F45990C1A808518005CADE0;
 			remoteInfo = RottenTomatoes;
 		};
+		2F4599371A80895D005CADE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F4599321A80895D005CADE0 /* Bond.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69491BAE1A7C217100A13B6B;
+			remoteInfo = Bond;
+		};
+		2F4599391A80895D005CADE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F4599321A80895D005CADE0 /* Bond.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 69491BB91A7C217100A13B6B;
+			remoteInfo = BondTests;
+		};
+		2F45993B1A808980005CADE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F4599321A80895D005CADE0 /* Bond.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 69491BAD1A7C217100A13B6B;
+			remoteInfo = Bond;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F45993E1A8089CC005CADE0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F45993F1A8089E1005CADE0 /* Bond.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F45990D1A808518005CADE0 /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4599111A808518005CADE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F4599121A808518005CADE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F4599141A808518005CADE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2F4599171A808518005CADE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F4599141A808518005CADE0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		2F4599191A808518005CADE0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2F45991C1A808518005CADE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2F4599221A808519005CADE0 /* RottenTomatoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RottenTomatoesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4599271A808519005CADE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F4599281A808519005CADE0 /* RottenTomatoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RottenTomatoesTests.swift; sourceTree = "<group>"; };
+		2F4599321A80895D005CADE0 /* Bond.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bond.xcodeproj; path = Bond/Bond.xcodeproj; sourceTree = "<group>"; };
+		2F919EAB1A83F00300EDDCEC /* ViewModelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelServices.swift; sourceTree = "<group>"; };
+		2F919EAD1A83F0BF00EDDCEC /* MasterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
+		2F919EAF1A83F22700EDDCEC /* ViewModelServicesImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelServicesImpl.swift; sourceTree = "<group>"; };
+		2F919EB71A83F62B00EDDCEC /* MoviesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
+		2F919EB81A83F62B00EDDCEC /* MoviesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesListViewController.xib; sourceTree = "<group>"; };
+		2F919EBC1A83F6E100EDDCEC /* MoviesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
+		2F919EBF1A83F77100EDDCEC /* DVDListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDListViewModel.swift; sourceTree = "<group>"; };
+		2F919EC11A83F79100EDDCEC /* DVDListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDListViewController.swift; sourceTree = "<group>"; };
+		2F919EC21A83F79100EDDCEC /* DVDListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVDListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F45993D1A808989005CADE0 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +111,7 @@
 		2F4599041A808518005CADE0 = {
 			isa = PBXGroup;
 			children = (
+				2F4599321A80895D005CADE0 /* Bond.xcodeproj */,
 				2F45990F1A808518005CADE0 /* RottenTomatoes */,
 				2F4599251A808519005CADE0 /* RottenTomatoesTests */,
 				2F45990E1A808518005CADE0 /* Products */,
@@ -77,11 +130,11 @@
 		2F45990F1A808518005CADE0 /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				2F919EAA1A83EFC100EDDCEC /* Model */,
+				2F919EA81A83EFB600EDDCEC /* View */,
+				2F919EA91A83EFBB00EDDCEC /* ViewModel */,
 				2F4599121A808518005CADE0 /* AppDelegate.swift */,
-				2F4599141A808518005CADE0 /* ViewController.swift */,
-				2F4599161A808518005CADE0 /* Main.storyboard */,
 				2F4599191A808518005CADE0 /* Images.xcassets */,
-				2F45991B1A808518005CADE0 /* LaunchScreen.xib */,
 				2F4599101A808518005CADE0 /* Supporting Files */,
 			);
 			path = RottenTomatoes;
@@ -112,6 +165,78 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2F4599331A80895D005CADE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F4599381A80895D005CADE0 /* Bond.framework */,
+				2F45993A1A80895D005CADE0 /* BondTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F919EA81A83EFB600EDDCEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EB21A83F50400EDDCEC /* DVDList */,
+				2F919EB11A83F4EF00EDDCEC /* MoviesList */,
+				2F4599141A808518005CADE0 /* MasterViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2F919EA91A83EFBB00EDDCEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EBE1A83F75F00EDDCEC /* DVDList */,
+				2F919EBB1A83F6CE00EDDCEC /* MoviesList */,
+				2F919EAB1A83F00300EDDCEC /* ViewModelServices.swift */,
+				2F919EAF1A83F22700EDDCEC /* ViewModelServicesImpl.swift */,
+				2F919EAD1A83F0BF00EDDCEC /* MasterViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F919EAA1A83EFC100EDDCEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2F919EB11A83F4EF00EDDCEC /* MoviesList */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EB71A83F62B00EDDCEC /* MoviesListViewController.swift */,
+				2F919EB81A83F62B00EDDCEC /* MoviesListViewController.xib */,
+			);
+			name = MoviesList;
+			sourceTree = "<group>";
+		};
+		2F919EB21A83F50400EDDCEC /* DVDList */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EC11A83F79100EDDCEC /* DVDListViewController.swift */,
+				2F919EC21A83F79100EDDCEC /* DVDListViewController.xib */,
+			);
+			name = DVDList;
+			sourceTree = "<group>";
+		};
+		2F919EBB1A83F6CE00EDDCEC /* MoviesList */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EBC1A83F6E100EDDCEC /* MoviesListViewModel.swift */,
+			);
+			name = MoviesList;
+			sourceTree = "<group>";
+		};
+		2F919EBE1A83F75F00EDDCEC /* DVDList */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EBF1A83F77100EDDCEC /* DVDListViewModel.swift */,
+			);
+			name = DVDList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +247,12 @@
 				2F4599091A808518005CADE0 /* Sources */,
 				2F45990A1A808518005CADE0 /* Frameworks */,
 				2F45990B1A808518005CADE0 /* Resources */,
+				2F45993E1A8089CC005CADE0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2F45993C1A808980005CADE0 /* PBXTargetDependency */,
 			);
 			name = RottenTomatoes;
 			productName = RottenTomatoes;
@@ -179,6 +306,12 @@
 			mainGroup = 2F4599041A808518005CADE0;
 			productRefGroup = 2F45990E1A808518005CADE0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2F4599331A80895D005CADE0 /* Products */;
+					ProjectRef = 2F4599321A80895D005CADE0 /* Bond.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2F45990C1A808518005CADE0 /* RottenTomatoes */,
@@ -187,14 +320,31 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		2F4599381A80895D005CADE0 /* Bond.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Bond.framework;
+			remoteRef = 2F4599371A80895D005CADE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2F45993A1A80895D005CADE0 /* BondTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BondTests.xctest;
+			remoteRef = 2F4599391A80895D005CADE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		2F45990B1A808518005CADE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F4599181A808518005CADE0 /* Main.storyboard in Resources */,
-				2F45991D1A808518005CADE0 /* LaunchScreen.xib in Resources */,
+				2F919EC41A83F79100EDDCEC /* DVDListViewController.xib in Resources */,
 				2F45991A1A808518005CADE0 /* Images.xcassets in Resources */,
+				2F919EBA1A83F62B00EDDCEC /* MoviesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +362,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F4599151A808518005CADE0 /* ViewController.swift in Sources */,
+				2F919EAE1A83F0BF00EDDCEC /* MasterViewModel.swift in Sources */,
+				2F919EAC1A83F00300EDDCEC /* ViewModelServices.swift in Sources */,
+				2F919EC31A83F79100EDDCEC /* DVDListViewController.swift in Sources */,
+				2F4599151A808518005CADE0 /* MasterViewController.swift in Sources */,
 				2F4599131A808518005CADE0 /* AppDelegate.swift in Sources */,
+				2F919EBD1A83F6E100EDDCEC /* MoviesListViewModel.swift in Sources */,
+				2F919EB01A83F22700EDDCEC /* ViewModelServicesImpl.swift in Sources */,
+				2F919EB91A83F62B00EDDCEC /* MoviesListViewController.swift in Sources */,
+				2F919EC01A83F77100EDDCEC /* DVDListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,26 +390,12 @@
 			target = 2F45990C1A808518005CADE0 /* RottenTomatoes */;
 			targetProxy = 2F4599231A808519005CADE0 /* PBXContainerItemProxy */;
 		};
+		2F45993C1A808980005CADE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Bond;
+			targetProxy = 2F45993B1A808980005CADE0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		2F4599161A808518005CADE0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F4599171A808518005CADE0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2F45991B1A808518005CADE0 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F45991C1A808518005CADE0 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2F45992A1A808519005CADE0 /* Debug */ = {
@@ -407,6 +550,7 @@
 				2F45992E1A808519005CADE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F45992F1A808519005CADE0 /* Build configuration list for PBXNativeTarget "RottenTomatoesTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +559,7 @@
 				2F4599311A808519005CADE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

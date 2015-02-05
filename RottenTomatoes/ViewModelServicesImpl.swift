@@ -13,12 +13,15 @@ class ViewModelServicesImpl: ViewModelServices {
     
     // MARK: Properties
     
+    let rottenTomatoesService: RottenTomatoesService
+    
     private let navigationController: UINavigationController!
     
     // MARK: API
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.rottenTomatoesService = RottenTomatoesServiceImpl()
     }
     
     // MARK: ViewModelServices Implementation

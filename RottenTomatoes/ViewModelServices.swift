@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ViewModelServices {
+    var rottenTomatoesService: RottenTomatoesService { get }
+    
     func pushViewModel(viewModel: AnyObject)
 }

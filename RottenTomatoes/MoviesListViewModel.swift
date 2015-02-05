@@ -19,4 +19,14 @@ class MoviesListViewModel: NSObject {
     init(services: ViewModelServices) {
         self.services = services
     }
+    
+    func fetchMovies() {
+        services.rottenTomatoesService.fetchMovies("toy story", limit: 30, page: 1, successHandler: {
+            movieNames in
+            println(movieNames)
+            }, errorHandler: {
+                error in
+                println(error)
+        })
+    }
 }

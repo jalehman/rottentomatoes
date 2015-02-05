@@ -7,5 +7,6 @@ target 'RottenTomatoes' do
 
 pod 'SwiftyJSON'
 pod 'AFNetworking'
+pod 'JGProgressHUD'
 
 end

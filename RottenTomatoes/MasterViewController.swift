@@ -45,6 +45,8 @@ class MasterViewController: UITabBarController {
         tabViewControllers[0].tabBarItem = UITabBarItem(title: "Movies", image: UIImage(), tag: 0)
         tabViewControllers[1].tabBarItem = UITabBarItem(title: "DVDs", image: UIImage(), tag: 1)
         
+        self.title = "Rotten Tomatoes"
+        
     }
     
 }

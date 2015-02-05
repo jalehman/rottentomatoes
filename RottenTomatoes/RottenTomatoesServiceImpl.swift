@@ -21,7 +21,7 @@ class RottenTomatoesServiceImpl: RottenTomatoesService {
         
         let encodedQuery = q.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         let urlString = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=\(self.apiKey)&q=\(encodedQuery!)&page_limit=\(limit)&page=\(page)"
-        println(urlString)
+
         let request = NSURLRequest(URL: NSURL(string: urlString)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{
             (response: NSURLResponse!, data: NSData!, error: NSError!) in

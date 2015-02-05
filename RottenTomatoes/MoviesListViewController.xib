@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesListViewController" customModule="RottenTomatoes" customModuleProvider="target">
             <connections>
                 <outlet property="moviesListTableView" destination="ROo-TI-VdY" id="cIk-p9-VCB"/>
+                <outlet property="moviesSearchBar" destination="OrC-vm-VbD" id="LLg-3k-eqg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,17 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Movies" translatesAutoresizingMaskIntoConstraints="NO" id="OrC-vm-VbD">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-TI-VdY">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ROo-TI-VdY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AAX-72-ZiA"/>
-                <constraint firstItem="ROo-TI-VdY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lcq-cH-hxR"/>
-                <constraint firstAttribute="bottom" secondItem="ROo-TI-VdY" secondAttribute="bottom" id="PTY-47-SK4"/>
-                <constraint firstAttribute="trailing" secondItem="ROo-TI-VdY" secondAttribute="trailing" id="Q74-or-6V3"/>
+                <constraint firstAttribute="trailing" secondItem="ROo-TI-VdY" secondAttribute="trailing" id="Gto-NV-IkG"/>
+                <constraint firstItem="OrC-vm-VbD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K3R-JR-0e9"/>
+                <constraint firstAttribute="bottom" secondItem="ROo-TI-VdY" secondAttribute="bottom" id="Lty-yy-76p"/>
+                <constraint firstAttribute="trailing" secondItem="OrC-vm-VbD" secondAttribute="trailing" id="hFZ-Mh-rc0"/>
+                <constraint firstItem="ROo-TI-VdY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="li9-hW-6sp"/>
+                <constraint firstItem="ROo-TI-VdY" firstAttribute="top" secondItem="OrC-vm-VbD" secondAttribute="bottom" id="td6-pN-Cyo"/>
+                <constraint firstItem="OrC-vm-VbD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y5V-AJ-yPS"/>
             </constraints>
         </view>
     </objects>

@@ -13,7 +13,7 @@ class MoviesListViewModel: NSObject {
     
     // MARK: Properties
     
-    var movies: DynamicArray<MovieCellViewModel>// = []
+    var movies: DynamicArray<MovieCellViewModel>
     
     private let services: ViewModelServices
     
@@ -24,16 +24,22 @@ class MoviesListViewModel: NSObject {
         self.movies = DynamicArray([])
     }
     
-    func fetchMovies() {
-        services.rottenTomatoesService.fetchMovies("toy story", limit: 30, page: 1, successHandler: {
-            [unowned self] (movies: [Movie]) in
-            for movie in movies {
+    func fetchMovies(query: String, completion: () -> Void = { }) {
+        services.rottenTomatoesService.fetchMovies(query, limit: 30, page: 1, successHandler: {
+            [unowned self] (results: [Movie]) in
+            self.movies.removeAll(true)
+            
+            for movie in results {
+                println(movie.title)
                 self.movies.append(MovieCellViewModel(services: self.services, movie: movie))
             }
+            
+            completion()
             
             }, errorHandler: {
                 error in
                 println(error)
+                completion()
         })
     }
 }

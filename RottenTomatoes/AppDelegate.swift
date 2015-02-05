@@ -28,6 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         window!.rootViewController = navigationController
 
+        /*
+        let textAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UITabBarItem.appearance().setTitleTextAttributes(textAttributes, forState: UIControlState.Selected)
+        UITabBar.appearance().barTintColor = UIColor.darkGrayColor()
+        */
+
         return true
     }
     

@@ -27,6 +27,9 @@ class ViewModelServicesImpl: ViewModelServices {
     // MARK: ViewModelServices Implementation
     
     func pushViewModel(viewModel: AnyObject) {
-        
+        if let movieViewModel = viewModel as? MovieViewModel {
+            let vc = MovieDetailViewController(viewModel: movieViewModel)
+            navigationController.pushViewController(vc, animated: true)
+        }
     }
 }

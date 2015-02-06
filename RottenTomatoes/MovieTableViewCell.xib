@@ -21,9 +21,18 @@
                             <constraint firstAttribute="width" secondItem="bKF-Ro-1XT" secondAttribute="height" multiplier="3:4" id="ZcI-aa-y2N"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5o-Ng-EFN">
+                        <rect key="frame" x="106" y="58" width="206" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="biq-C5-3xy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuW-yc-6Ya">
-                        <rect key="frame" x="106" y="8" width="206" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="106" y="8" width="206" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,11 +42,15 @@
                     <constraint firstItem="UuW-yc-6Ya" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CGa-Fe-UMN"/>
                     <constraint firstItem="bKF-Ro-1XT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Hjn-6X-gDe"/>
                     <constraint firstItem="UuW-yc-6Ya" firstAttribute="leading" secondItem="bKF-Ro-1XT" secondAttribute="trailing" constant="8" id="Qur-dT-EaH"/>
+                    <constraint firstItem="k5o-Ng-EFN" firstAttribute="leading" secondItem="bKF-Ro-1XT" secondAttribute="trailing" constant="8" id="SAE-Uk-ftn"/>
                     <constraint firstItem="UuW-yc-6Ya" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="c9X-p8-aMV"/>
                     <constraint firstItem="bKF-Ro-1XT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mby-n4-L5N"/>
+                    <constraint firstItem="k5o-Ng-EFN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xl7-dA-wiO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="k5o-Ng-EFN" secondAttribute="bottom" constant="0.5" id="yrB-zA-SiG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="movieDescriptionLabel" destination="k5o-Ng-EFN" id="GNe-6D-Ej7"/>
                 <outlet property="movieThumbnailImage" destination="bKF-Ro-1XT" id="zym-F3-Zmr"/>
                 <outlet property="movieTitleLabel" destination="UuW-yc-6Ya" id="wGf-lc-D3w"/>
             </connections>

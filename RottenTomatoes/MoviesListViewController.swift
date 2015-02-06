@@ -10,16 +10,18 @@ import UIKit
 import Bond
 import JGProgressHUD
 
-class MoviesListViewController: UIViewController, UISearchBarDelegate {
+class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate {
     
     // MARK: Properties
     
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var moviesListTableView: UITableView!
     @IBOutlet weak var moviesSearchBar: UISearchBar!
     
     var hairlineImageView: UIImageView?
     
     private let viewModel: MoviesListViewModel
+    private var lastQuery: String?
     
     // MARK: API
     
@@ -39,52 +41,78 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate {
         
         edgesForExtendedLayout = .None
         
-        //viewModel.fetchMovies()
-        
         // Register the nib file with the tableview under a reuse identifier
         moviesListTableView.registerNib(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "com.jl.movieCell")
         
         moviesSearchBar.delegate = self
+        moviesListTableView.delegate = self
+                        
+        tapGestureRecognizer.enabled = false
         
         bindViewModel()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         hairlineImageView = findHairlineImageViewUnder(navigationController!.navigationBar)
         hairlineImageView?.hidden = true
+        if lastQuery == nil || lastQuery != moviesSearchBar.text {
+            searchMovies()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         hairlineImageView?.hidden = false
+        lastQuery = moviesSearchBar.text
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func tapGestureReceieved(sender: AnyObject) {
+        moviesSearchBar.resignFirstResponder()
     }
     
     // MARK: UISearchBarDelegate Impl
     
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        tapGestureRecognizer.enabled = true
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        tapGestureRecognizer.enabled = false
+    }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {        
         moviesSearchBar.resignFirstResponder()
-        let hud = JGProgressHUD(style: JGProgressHUDStyle.Light)
-        hud.textLabel.text = "Loading"
-        hud.showInView(view)
-        viewModel.fetchMovies(searchBar.text) {
-            hud.dismiss()
-        }
+        searchMovies()
+    }    
+    
+    // MARK: UITableViewDelegate Impl
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        viewModel.showMovieDetailView(indexPath.row)
     }
     
     // MARK: Private
     
+    private func searchMovies() {
+        let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
+        hud.textLabel.text = "Loading"
+        hud.showInView(view)
+        viewModel.fetchMovies(moviesSearchBar.text) {
+            hud.dismiss()
+        }
+    }
+    
     private func bindViewModel() {
         // From Bond example here: https://github.com/SwiftBond/Bond/blob/master/README.md#what-can-it-do
         viewModel.movies.map {
-            [unowned self] (viewModel: MovieCellViewModel) -> MovieTableViewCell in
-            let cell = self.moviesListTableView.dequeueReusableCellWithIdentifier("com.jl.movieCell") as UITableViewCell
-            
-            if let reactiveView = cell as? ReactiveView {
-                reactiveView.bindViewModel(viewModel)
-            }
-            
-            return cell as MovieTableViewCell
+            [unowned self] (viewModel: MovieViewModel) -> MovieTableViewCell in
+            let cell = self.moviesListTableView.dequeueReusableCellWithIdentifier("com.jl.movieCell") as MovieTableViewCell
+            cell.bindViewModel(viewModel)
+            return cell
         } ->> self.moviesListTableView
     }
     
@@ -101,6 +129,6 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate {
         }
         return nil
     }
-
+    
 
 }

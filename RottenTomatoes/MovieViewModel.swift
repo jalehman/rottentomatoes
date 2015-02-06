@@ -9,12 +9,15 @@
 import Foundation
 import Bond
 
-class MovieCellViewModel: NSObject {
+class MovieViewModel: NSObject {
     
     // MARK: Properties
     
     let title: Dynamic<String>
-    let imageURL: Dynamic<String>
+    let imageURL: Dynamic<NSURL>
+    let thumbnailURL: Dynamic<NSURL>
+    let synopsis: Dynamic<String>
+    let rating: Dynamic<String>
     
     private let services: ViewModelServices
     
@@ -23,6 +26,9 @@ class MovieCellViewModel: NSObject {
     init(services: ViewModelServices, movie: Movie) {
         self.services = services
         self.title = Dynamic(movie.title)
+        self.thumbnailURL = Dynamic(movie.lowResImageURL)
         self.imageURL = Dynamic(movie.imageURL)
+        self.synopsis = Dynamic(movie.synopsis)
+        self.rating = Dynamic(movie.mpaaRating)
     }
 }

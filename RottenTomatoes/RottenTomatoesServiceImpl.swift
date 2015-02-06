@@ -20,17 +20,21 @@ class RottenTomatoesServiceImpl: RottenTomatoesService {
     func fetchMovies(q: String, limit: Int, page: Int, successHandler: ([Movie]) -> (), errorHandler: (NSError) -> ()) {
         
         let encodedQuery = q.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-        let urlString = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=\(self.apiKey)&q=\(encodedQuery!)&page_limit=\(limit)&page=\(page)"
-
+        var urlString: String
+        if q == "" {
+            urlString = buildURL("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json", parameters: [:])
+        } else {
+            let parameters = ["q": q, "page_limit": "\(limit)", "page": "\(page)"]
+            urlString = buildURL("http://api.rottentomatoes.com/api/public/v1.0/movies.json", parameters: parameters)
+        }
+        
         let request = NSURLRequest(URL: NSURL(string: urlString)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{
             (response: NSURLResponse!, data: NSData!, error: NSError!) in
-            //var errorValue: NSError? = nil
-            //let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-            let json = JSON(data: data)
             if error != nil {
                 errorHandler(error)
             } else {
+                let json = JSON(data: data)
                 let moviesJson = json["movies"].arrayValue
                 let movies = moviesJson.map { (movie: JSON) -> Movie in
                     let id = movie["id"].stringValue
@@ -48,6 +52,16 @@ class RottenTomatoesServiceImpl: RottenTomatoesService {
             }
         })
     }
-
     
+    // MARK: Private
+
+    private func buildURL(baseURL: String, parameters: [String: String]) -> String {
+        var url = "\(baseURL)?apikey=\(self.apiKey)"
+        
+        for (key: String, value: String) in parameters {
+            url += "&\(key)=\(value.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)"
+        }
+        
+        return url
+    }
 }

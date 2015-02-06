@@ -4,8 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DVDListViewController" customModule="RottenTomatoes" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailViewController" customModule="RottenTomatoes" customModuleProvider="target">
             <connections>
+                <outlet property="posterImageView" destination="IHe-oo-pqE" id="Zy6-7N-AMW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,17 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mxl-9G-dJ0">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IHe-oo-pqE">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Mxl-9G-dJ0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ad2-3J-xBp"/>
-                <constraint firstAttribute="trailing" secondItem="Mxl-9G-dJ0" secondAttribute="trailing" id="ZJI-ir-E7p"/>
-                <constraint firstAttribute="bottom" secondItem="Mxl-9G-dJ0" secondAttribute="bottom" id="fWu-uR-aHk"/>
-                <constraint firstItem="Mxl-9G-dJ0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oai-0d-EEo"/>
+                <constraint firstAttribute="bottom" secondItem="IHe-oo-pqE" secondAttribute="bottom" id="4uG-A4-2IQ"/>
+                <constraint firstItem="IHe-oo-pqE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="75Q-Vh-DFU"/>
+                <constraint firstItem="IHe-oo-pqE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VQf-hL-eGD"/>
+                <constraint firstAttribute="trailing" secondItem="IHe-oo-pqE" secondAttribute="trailing" id="oNV-qH-RFt"/>
             </constraints>
         </view>
     </objects>

@@ -19,7 +19,8 @@ class Movie: NSObject {
     let criticScore: Int
     let audienceScore: Int
     let synopsis: String
-    let imageURL: String
+    let lowResImageURL: NSURL
+    let imageURL: NSURL
     
     // MARK: API
     
@@ -32,7 +33,8 @@ class Movie: NSObject {
         self.audienceScore = audienceScore
         self.synopsis = synopsis
         // TODO: Use a Swift setter?
-        self.imageURL = imageURL.stringByReplacingOccurrencesOfString("_tmb.", withString: "_ori.", options: nil, range: nil)
+        self.lowResImageURL = NSURL(string: imageURL)!
+        self.imageURL = NSURL(string: imageURL.stringByReplacingOccurrencesOfString("_tmb.", withString: "_ori.", options: nil, range: nil))!
     }
     
    }

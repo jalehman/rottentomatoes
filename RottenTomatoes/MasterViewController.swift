@@ -47,7 +47,9 @@ class MasterViewController: UITabBarController {
         
         self.title = "Rotten Tomatoes"
         
-    }
-    
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = newBackButton
+
+    }    
 }
 

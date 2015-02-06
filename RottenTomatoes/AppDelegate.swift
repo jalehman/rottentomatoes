@@ -28,11 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         window!.rootViewController = navigationController
 
-        /*
-        let textAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        UITabBarItem.appearance().setTitleTextAttributes(textAttributes, forState: UIControlState.Selected)
-        UITabBar.appearance().barTintColor = UIColor.darkGrayColor()
-        */
+        // Why does my tab bar appear different across tabs???
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
 
         return true
     }

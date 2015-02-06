@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc protocol ReactiveView {
+protocol ReactiveView {
     func bindViewModel(viewModel: AnyObject)
 }

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="moviesListTableView" destination="ROo-TI-VdY" id="cIk-p9-VCB"/>
                 <outlet property="moviesSearchBar" destination="OrC-vm-VbD" id="LLg-3k-eqg"/>
+                <outlet property="tapGestureRecognizer" destination="RTq-2j-y08" id="kmi-zi-Upz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,6 +27,7 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ROo-TI-VdY" secondAttribute="trailing" id="Gto-NV-IkG"/>
                 <constraint firstItem="OrC-vm-VbD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K3R-JR-0e9"/>
@@ -35,6 +37,14 @@
                 <constraint firstItem="ROo-TI-VdY" firstAttribute="top" secondItem="OrC-vm-VbD" secondAttribute="bottom" id="td6-pN-Cyo"/>
                 <constraint firstItem="OrC-vm-VbD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y5V-AJ-yPS"/>
             </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="RTq-2j-y08" appends="YES" id="m3K-eM-r4I"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="RTq-2j-y08">
+            <connections>
+                <action selector="tapGestureReceieved:" destination="-1" id="iZ4-5X-MIB"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

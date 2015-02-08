@@ -18,6 +18,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var moviesListTableView: UITableView!
     @IBOutlet weak var moviesSearchBar: UISearchBar!
+    @IBOutlet weak var networkErrorView: UIView!
     
     var hairlineImageView: UIImageView?
     
@@ -53,6 +54,8 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "searchMovies", forControlEvents: .ValueChanged)
         moviesListTableView.insertSubview(refreshControl, atIndex: 0)
+        
+        networkErrorView.hidden = true
         
         bindViewModel()
         
@@ -100,17 +103,22 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         viewModel.showMovieDetailView(indexPath.row)
     }
     
-    // MARK: Private
-    
-    private func searchMovies() {
+    func searchMovies() {
         let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
         hud.textLabel.text = "Loading"
         hud.showInView(view)
-        viewModel.fetchMovies(moviesSearchBar.text) {
+        viewModel.fetchMovies(moviesSearchBar.text, completion: {
             hud.dismiss()
             self.refreshControl.endRefreshing()
-        }
+            self.networkErrorView.hidden = true
+            }, error: { (error: NSError) in
+                hud.dismiss()
+                self.refreshControl.endRefreshing()
+                self.networkErrorView.hidden = false
+        })
     }
+    
+    // MARK: Private
     
     private func bindViewModel() {
         // From Bond example here: https://github.com/SwiftBond/Bond/blob/master/README.md#what-can-it-do

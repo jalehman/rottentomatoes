@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="moviesListTableView" destination="ROo-TI-VdY" id="cIk-p9-VCB"/>
                 <outlet property="moviesSearchBar" destination="OrC-vm-VbD" id="LLg-3k-eqg"/>
+                <outlet property="networkErrorView" destination="eEC-HY-4ae" id="agl-mu-WsV"/>
                 <outlet property="tapGestureRecognizer" destination="RTq-2j-y08" id="kmi-zi-Upz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,16 +28,46 @@
                     <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-HY-4ae">
+                    <rect key="frame" x="0.0" y="44" width="600" height="26"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Error" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYa-W7-XaI">
+                            <rect key="frame" x="251" y="4" width="98" height="18"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-warning-6-icon-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="m4h-qp-0Sw">
+                            <rect key="frame" x="221" y="5" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="16" id="XQc-Ar-hO3"/>
+                                <constraint firstAttribute="height" constant="16" id="yYF-Xy-HnL"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="cYa-W7-XaI" secondAttribute="centerX" id="AFd-KC-Y3q"/>
+                        <constraint firstItem="m4h-qp-0Sw" firstAttribute="top" secondItem="eEC-HY-4ae" secondAttribute="top" constant="5" id="CrW-dC-aEd"/>
+                        <constraint firstItem="cYa-W7-XaI" firstAttribute="leading" secondItem="m4h-qp-0Sw" secondAttribute="trailing" constant="14" id="Rnk-5c-FeR"/>
+                        <constraint firstAttribute="height" constant="26" id="eJP-Us-epV"/>
+                        <constraint firstAttribute="centerY" secondItem="cYa-W7-XaI" secondAttribute="centerY" id="zki-Fa-Uvt"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="eEC-HY-4ae" firstAttribute="top" secondItem="OrC-vm-VbD" secondAttribute="bottom" id="DOm-aj-sZN"/>
+                <constraint firstItem="eEC-HY-4ae" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Did-XZ-6iH"/>
                 <constraint firstAttribute="trailing" secondItem="ROo-TI-VdY" secondAttribute="trailing" id="Gto-NV-IkG"/>
                 <constraint firstItem="OrC-vm-VbD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K3R-JR-0e9"/>
                 <constraint firstAttribute="bottom" secondItem="ROo-TI-VdY" secondAttribute="bottom" id="Lty-yy-76p"/>
                 <constraint firstAttribute="trailing" secondItem="OrC-vm-VbD" secondAttribute="trailing" id="hFZ-Mh-rc0"/>
+                <constraint firstAttribute="trailing" secondItem="eEC-HY-4ae" secondAttribute="trailing" id="jTG-su-xcs"/>
                 <constraint firstItem="ROo-TI-VdY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="li9-hW-6sp"/>
                 <constraint firstItem="ROo-TI-VdY" firstAttribute="top" secondItem="OrC-vm-VbD" secondAttribute="bottom" id="td6-pN-Cyo"/>
+                <constraint firstItem="eEC-HY-4ae" firstAttribute="top" secondItem="OrC-vm-VbD" secondAttribute="bottom" id="wLK-aM-2gp"/>
                 <constraint firstItem="OrC-vm-VbD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y5V-AJ-yPS"/>
             </constraints>
             <connections>
@@ -49,4 +80,7 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="iconmonstr-warning-6-icon-64.png" width="64" height="64"/>
+    </resources>
 </document>

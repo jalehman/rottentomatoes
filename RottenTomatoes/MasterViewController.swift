@@ -41,9 +41,10 @@ class MasterViewController: UITabBarController {
         self.edgesForExtendedLayout = .None
         
         self.setViewControllers(tabViewControllers, animated: false)
+        println(UIImage(named: "iconmonstr-video-icon-64"))
         
-        tabViewControllers[0].tabBarItem = UITabBarItem(title: "Movies", image: UIImage(), tag: 0)
-        tabViewControllers[1].tabBarItem = UITabBarItem(title: "DVDs", image: UIImage(), tag: 1)
+        tabViewControllers[0].tabBarItem = UITabBarItem(title: "Movies", image: UIImage(named: "iconmonstr-video-icon-64"), tag: 0)
+        tabViewControllers[1].tabBarItem = UITabBarItem(title: "DVDs", image: UIImage(named: "iconmonstr-disc-3-icon-64"), tag: 1)
         
         self.title = "Rotten Tomatoes"
         

@@ -28,7 +28,7 @@ class MoviesListViewModel: NSObject {
         self.services.pushViewModel(movies[movieIndex])
     }
     
-    func fetchMovies(query: String, completion: () -> Void = { }) {
+    func fetchMovies(query: String, completion: () -> Void = { }, error: (NSError) -> Void = { _ in }) {
         services.rottenTomatoesService.fetchMovies(query, limit: 30, page: 1, successHandler: {
             [unowned self] (results: [Movie]) in
             self.movies.removeAll(true)
@@ -40,9 +40,8 @@ class MoviesListViewModel: NSObject {
             completion()
             
             }, errorHandler: {
-                error in
-                println(error)
-                completion()
+                (networkError: NSError) in
+                error(networkError)
         })
     }
 }

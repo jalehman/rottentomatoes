@@ -46,7 +46,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         moviesSearchBar.delegate = self
         moviesListTableView.delegate = self
-                        
+        
         tapGestureRecognizer.enabled = false
         
         bindViewModel()

@@ -29,7 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = navigationController
 
         // Why does my tab bar appear different across tabs???
-        UITabBar.appearance().barTintColor = UIColor.whiteColor()
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor.yellowColor()
+        
+        let titleTextAttributes = [NSForegroundColorAttributeName: UIColor.yellowColor()]
+        UINavigationBar.appearance().titleTextAttributes = titleTextAttributes
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor = UIColor.yellowColor()
 
         return true
     }

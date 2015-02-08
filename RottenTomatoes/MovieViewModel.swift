@@ -14,6 +14,9 @@ class MovieViewModel: NSObject {
     // MARK: Properties
     
     let title: Dynamic<String>
+    let year: Int
+    let criticScore: Int
+    let audienceScore: Int
     let imageURL: Dynamic<NSURL>
     let thumbnailURL: Dynamic<NSURL>
     let synopsis: Dynamic<String>
@@ -26,6 +29,9 @@ class MovieViewModel: NSObject {
     init(services: ViewModelServices, movie: Movie) {
         self.services = services
         self.title = Dynamic(movie.title)
+        self.year = movie.year
+        self.criticScore = movie.criticScore
+        self.audienceScore = movie.audienceScore
         self.thumbnailURL = Dynamic(movie.lowResImageURL)
         self.imageURL = Dynamic(movie.imageURL)
         self.synopsis = Dynamic(movie.synopsis)

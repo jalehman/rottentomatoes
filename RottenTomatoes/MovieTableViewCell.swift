@@ -21,12 +21,10 @@ class MovieTableViewCell: UITableViewCell, ReactiveView {
         movieCellViewModel.title ->> movieTitleLabel
         // attributedText isn't designated bondable by Bond framework, so need to do it this way.
         movieDescriptionLabel.attributedText = formattedDescription(movieCellViewModel.rating.value, synopsis: movieCellViewModel.synopsis.value)
-                
-        movieThumbnailImage.setImageWithURLRequest(NSURLRequest(URL: movieCellViewModel.thumbnailURL.value), placeholderImage: UIImage(), success: { [unowned self] (_, _, image: UIImage!) in
+        movieThumbnailImage.setImageWithURLRequest(NSURLRequest(URL: movieCellViewModel.thumbnailURL.value), placeholderImage: UIImage(), success: { (_, _, image: UIImage!) in
             self.movieThumbnailImage.image = image
             self.movieThumbnailImage.setImageWithURL(movieCellViewModel.imageURL.value)
-            }
-            , failure: { (_, _, _) in
+            }, failure: { (_, _, _) in
                 println("TODO: Handle error.")
         })
     }

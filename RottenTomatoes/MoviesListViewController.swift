@@ -14,6 +14,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     
     // MARK: Properties
     
+    var refreshControl: UIRefreshControl!
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var moviesListTableView: UITableView!
     @IBOutlet weak var moviesSearchBar: UISearchBar!
@@ -48,6 +49,10 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         moviesListTableView.delegate = self
         
         tapGestureRecognizer.enabled = false
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "searchMovies", forControlEvents: .ValueChanged)
+        moviesListTableView.insertSubview(refreshControl, atIndex: 0)
         
         bindViewModel()
         
@@ -103,6 +108,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         hud.showInView(view)
         viewModel.fetchMovies(moviesSearchBar.text) {
             hud.dismiss()
+            self.refreshControl.endRefreshing()
         }
     }
     

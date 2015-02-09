@@ -61,6 +61,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.alpha = 1
         if lastQuery == nil || lastQuery != moviesSearchBar.text {
             searchMovies()
         }
@@ -99,6 +100,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         viewModel.showMovieDetailView(indexPath.row)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func searchMovies() {

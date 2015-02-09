@@ -73,17 +73,25 @@ class DVDListViewController: UIViewController, UITableViewDelegate {
         bindViewModel()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.alpha = 1
+    }
+    
     // MARK: UITableViewDelegate Impl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         viewModel.showDVDDetailView(indexPath.row)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    // MARK: Private/Internal
     
     func pullToRefreshDVDs() {
         refreshDVDs(.TopRentals)
     }
     
-    func refreshDVDs(listType: DVDListType) {
+    private func refreshDVDs(listType: DVDListType) {
         let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
         hud.textLabel.text = "Loading"
         hud.showInView(view)
@@ -97,8 +105,6 @@ class DVDListViewController: UIViewController, UITableViewDelegate {
                 self.networkErrorView.hidden = false
         })
     }
-    
-    // MARK: Private
     
     private func bindViewModel() {
         // From Bond example here: https://github.com/SwiftBond/Bond/blob/master/README.md#what-can-it-do

@@ -38,13 +38,13 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.alpha = 0.8
-        
         detailsViewBottomConstraint.constant = BOTTOM_CONSTRAINT_OFFSET
         
-        
         bindViewModel()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.alpha = 0.95
     }
     
     @IBAction func detailsSwipeUp(sender: AnyObject) {

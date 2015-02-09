@@ -46,6 +46,8 @@ much user-provided input to the app, but was still neat to work with.
 
 ![walkthrough](rt-walkthrough.gif)
 
+![connectivity](rt-connectivity.gif)
+
 Created with [LiceCap](http://www.cockos.com/licecap/)
 
 

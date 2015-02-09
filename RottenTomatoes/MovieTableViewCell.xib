@@ -27,13 +27,13 @@
                             <constraint firstAttribute="height" constant="70" id="biq-C5-3xy"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuW-yc-6Ya">
                         <rect key="frame" x="106" y="8" width="206" height="21.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -49,6 +49,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="k5o-Ng-EFN" secondAttribute="bottom" constant="0.5" id="yrB-zA-SiG"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="movieDescriptionLabel" destination="k5o-Ng-EFN" id="GNe-6D-Ej7"/>
                 <outlet property="movieThumbnailImage" destination="bKF-Ro-1XT" id="zym-F3-Zmr"/>

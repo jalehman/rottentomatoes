@@ -58,6 +58,8 @@ class DVDListViewController: UIViewController, UITableViewDelegate {
         let segmentedControlFont = UIFont.systemFontOfSize(10)
         let textAttributes = [NSFontAttributeName: segmentedControlFont]
         dvdListTypeControl.setTitleTextAttributes(textAttributes, forState: .Normal)
+        
+        dvdsListTableView.separatorColor = UIColor.lightGrayColor()
 
         dvdListSelectionBond = Dynamic.asObservableFor(dvdListTypeControl, keyPath: "selectedSegmentIndex") ->> {
             (index: Int) in

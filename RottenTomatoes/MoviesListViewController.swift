@@ -55,6 +55,8 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         networkErrorView.hidden = true
         
+        moviesListTableView.separatorColor = UIColor.lightGrayColor()
+        
         bindViewModel()
         
     }

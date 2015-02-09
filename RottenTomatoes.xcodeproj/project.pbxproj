@@ -36,6 +36,7 @@
 		2F919F151A881BEA00EDDCEC /* iconmonstr-warning-6-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F919F141A881BEA00EDDCEC /* iconmonstr-warning-6-icon-64.png */; };
 		2F919F181A881F2A00EDDCEC /* iconmonstr-video-icon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F919F161A881F2A00EDDCEC /* iconmonstr-video-icon-64@2x.png */; };
 		2F919F191A881F2A00EDDCEC /* iconmonstr-disc-3-icon-64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F919F171A881F2A00EDDCEC /* iconmonstr-disc-3-icon-64@2x.png */; };
+		2F919F1F1A8828E600EDDCEC /* DVDListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F919F1E1A8828E600EDDCEC /* DVDListType.swift */; };
 		74E9B6BB606AA98F47BED3D4 /* Pods_RottenTomatoes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3837CF279411EF10C2DACAE0 /* Pods_RottenTomatoes.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		2F919F141A881BEA00EDDCEC /* iconmonstr-warning-6-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-warning-6-icon-64.png"; sourceTree = "<group>"; };
 		2F919F161A881F2A00EDDCEC /* iconmonstr-video-icon-64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-video-icon-64@2x.png"; sourceTree = "<group>"; };
 		2F919F171A881F2A00EDDCEC /* iconmonstr-disc-3-icon-64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-disc-3-icon-64@2x.png"; sourceTree = "<group>"; };
+		2F919F1E1A8828E600EDDCEC /* DVDListType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDListType.swift; sourceTree = "<group>"; };
 		3837CF279411EF10C2DACAE0 /* Pods_RottenTomatoes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RottenTomatoes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B978DEB99F06F7C27AFEA1FF /* Pods-RottenTomatoes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenTomatoes.release.xcconfig"; path = "Pods/Target Support Files/Pods-RottenTomatoes/Pods-RottenTomatoes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,7 +220,6 @@
 			children = (
 				2F919ECE1A840E1100EDDCEC /* Master */,
 				2F919EB11A83F4EF00EDDCEC /* MoviesList */,
-				2F919EB21A83F50400EDDCEC /* DVDList */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -228,6 +229,7 @@
 			children = (
 				2F919EBE1A83F75F00EDDCEC /* DVDList */,
 				2F919EBB1A83F6CE00EDDCEC /* MoviesList */,
+				2F919ED11A84174E00EDDCEC /* MovieViewModel.swift */,
 				2F919EAB1A83F00300EDDCEC /* ViewModelServices.swift */,
 				2F919EAF1A83F22700EDDCEC /* ViewModelServicesImpl.swift */,
 				2F919EAD1A83F0BF00EDDCEC /* MasterViewModel.swift */,
@@ -240,6 +242,7 @@
 			children = (
 				2F919EC81A84055900EDDCEC /* Services */,
 				2F919ECF1A840EE700EDDCEC /* Movie.swift */,
+				2F919F1E1A8828E600EDDCEC /* DVDListType.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -248,28 +251,26 @@
 			isa = PBXGroup;
 			children = (
 				2F919EE31A84536400EDDCEC /* MovieDetail */,
-				2F919EE11A844CE300EDDCEC /* MoviesListViewController.swift */,
-				2F919EB81A83F62B00EDDCEC /* MoviesListViewController.xib */,
-				2F919ED31A841A4000EDDCEC /* MovieTableViewCell.swift */,
-				2F919ED41A841A4000EDDCEC /* MovieTableViewCell.xib */,
+				2F919EB21A83F50400EDDCEC /* DVDListTable */,
+				2F919F1A1A8822A500EDDCEC /* MoviesListTable */,
+				2F919F1B1A8822B300EDDCEC /* MovieCell */,
 			);
 			name = MoviesList;
 			sourceTree = "<group>";
 		};
-		2F919EB21A83F50400EDDCEC /* DVDList */ = {
+		2F919EB21A83F50400EDDCEC /* DVDListTable */ = {
 			isa = PBXGroup;
 			children = (
 				2F919EC11A83F79100EDDCEC /* DVDListViewController.swift */,
 				2F919EC21A83F79100EDDCEC /* DVDListViewController.xib */,
 			);
-			name = DVDList;
+			name = DVDListTable;
 			sourceTree = "<group>";
 		};
 		2F919EBB1A83F6CE00EDDCEC /* MoviesList */ = {
 			isa = PBXGroup;
 			children = (
 				2F919EBC1A83F6E100EDDCEC /* MoviesListViewModel.swift */,
-				2F919ED11A84174E00EDDCEC /* MovieViewModel.swift */,
 			);
 			name = MoviesList;
 			sourceTree = "<group>";
@@ -326,6 +327,24 @@
 				2F919F171A881F2A00EDDCEC /* iconmonstr-disc-3-icon-64@2x.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		2F919F1A1A8822A500EDDCEC /* MoviesListTable */ = {
+			isa = PBXGroup;
+			children = (
+				2F919EE11A844CE300EDDCEC /* MoviesListViewController.swift */,
+				2F919EB81A83F62B00EDDCEC /* MoviesListViewController.xib */,
+			);
+			name = MoviesListTable;
+			sourceTree = "<group>";
+		};
+		2F919F1B1A8822B300EDDCEC /* MovieCell */ = {
+			isa = PBXGroup;
+			children = (
+				2F919ED31A841A4000EDDCEC /* MovieTableViewCell.swift */,
+				2F919ED41A841A4000EDDCEC /* MovieTableViewCell.xib */,
+			);
+			name = MovieCell;
 			sourceTree = "<group>";
 		};
 		49B61DD0853A738944275001 /* Pods */ = {
@@ -541,6 +560,7 @@
 				2F919ECB1A84057E00EDDCEC /* RottenTomatoesService.swift in Sources */,
 				2F919EBD1A83F6E100EDDCEC /* MoviesListViewModel.swift in Sources */,
 				2F919EE01A84354700EDDCEC /* ReactiveView.swift in Sources */,
+				2F919F1F1A8828E600EDDCEC /* DVDListType.swift in Sources */,
 				2F919EB01A83F22700EDDCEC /* ViewModelServicesImpl.swift in Sources */,
 				2F919ED91A84221A00EDDCEC /* NSLayoutConstraint+Extensions.swift in Sources */,
 				2F919EC01A83F77100EDDCEC /* DVDListViewModel.swift in Sources */,

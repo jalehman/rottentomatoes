@@ -22,11 +22,11 @@ class MovieTableViewCell: UITableViewCell, ReactiveView {
     func bindViewModel(viewModel: AnyObject) {
         let movieCellViewModel = viewModel as MovieViewModel
         
-        movieCellViewModel.title ->> movieTitleLabel
+         movieTitleLabel.text = movieCellViewModel.title
         // attributedText isn't designated bondable by Bond framework, so need to do it this way.
-        movieDescriptionLabel.attributedText = formattedDescription(movieCellViewModel.rating.value, synopsis: movieCellViewModel.synopsis.value)
+        movieDescriptionLabel.attributedText = formattedDescription(movieCellViewModel.rating, synopsis: movieCellViewModel.synopsis)
         movieThumbnailImage.image = nil
-        movieThumbnailImage.setImageWithURLRequest(NSURLRequest(URL: movieCellViewModel.thumbnailURL.value), placeholderImage: UIImage(), success: {
+        movieThumbnailImage.setImageWithURLRequest(NSURLRequest(URL: movieCellViewModel.thumbnailURL), placeholderImage: UIImage(), success: {
             (request: NSURLRequest!, _, image: UIImage!) in
             if request == nil {
                 self.movieThumbnailImage.image = image
@@ -34,7 +34,7 @@ class MovieTableViewCell: UITableViewCell, ReactiveView {
                 self.animateImageAppearance(image)
             }
             
-            self.movieThumbnailImage.setImageWithURL(movieCellViewModel.imageURL.value)
+            self.movieThumbnailImage.setImageWithURL(movieCellViewModel.imageURL)
             }, failure: { (_, _, _) in
                 println("TODO: Handle error.")
         })

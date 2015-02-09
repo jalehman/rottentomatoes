@@ -68,17 +68,17 @@ class MovieDetailViewController: UIViewController {
     }
     
     func bindViewModel() {
-        self.title = viewModel.title.value
-        self.titleLabel.text = "\(viewModel.title.value) (\(viewModel.year))"
+        self.title = viewModel.title
+        self.titleLabel.text = "\(viewModel.title) (\(viewModel.year))"
         self.criticScoreLabel.text = "Critics Score: \(viewModel.criticScore)"
         self.audienceScoreLabel.text = "Audience Score: \(viewModel.audienceScore)"
-        synopsisTextView.text = viewModel.synopsis.value
-        ratingLabel.text = viewModel.rating.value
+        synopsisTextView.text = viewModel.synopsis
+        ratingLabel.text = viewModel.rating
         
         
         // Definitely the easiest way to do this.
-        posterImageView.setImageWithURL(viewModel.thumbnailURL.value)
-        posterImageView.setImageWithURL(viewModel.imageURL.value)
+        posterImageView.setImageWithURL(viewModel.thumbnailURL)
+        posterImageView.setImageWithURL(viewModel.imageURL)
     }
     
 }

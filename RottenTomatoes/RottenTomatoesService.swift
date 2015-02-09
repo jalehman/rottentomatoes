@@ -11,5 +11,6 @@ import Foundation
 protocol RottenTomatoesService {
     var apiKey: String { get }
     
-    func fetchMovies(q: String, limit: Int, page: Int, successHandler: ([Movie]) -> (), errorHandler: (NSError) -> ())
+    func fetchMovies(q: String, limit: Int, page: Int, successHandler: ([Movie]) -> (), errorHandler: (NSError) -> ())    
+    func fetchDVDs(type: DVDListType, successHandler: ([Movie]) -> (), errorHandler: (NSError) -> ())
 }

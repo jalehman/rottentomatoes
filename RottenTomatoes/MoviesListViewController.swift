@@ -20,8 +20,6 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     @IBOutlet weak var moviesSearchBar: UISearchBar!
     @IBOutlet weak var networkErrorView: UIView!
     
-    var hairlineImageView: UIImageView?
-    
     private let viewModel: MoviesListViewModel
     private var lastQuery: String?
     
@@ -63,8 +61,6 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        hairlineImageView = findHairlineImageViewUnder(navigationController!.navigationBar)
-        hairlineImageView?.hidden = true
         if lastQuery == nil || lastQuery != moviesSearchBar.text {
             searchMovies()
         }
@@ -72,7 +68,6 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        hairlineImageView?.hidden = false
         lastQuery = moviesSearchBar.text
     }
     
@@ -80,6 +75,9 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
     
     @IBAction func tapGestureReceieved(sender: AnyObject) {
         moviesSearchBar.resignFirstResponder()
+        if moviesSearchBar.text == "" && lastQuery != moviesSearchBar.text {
+            searchMovies()
+        }
     }
     
     // MARK: UISearchBarDelegate Impl
@@ -107,6 +105,7 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
         let hud = JGProgressHUD(style: JGProgressHUDStyle.Dark)
         hud.textLabel.text = "Loading"
         hud.showInView(view)
+        lastQuery = moviesSearchBar.text
         viewModel.fetchMovies(moviesSearchBar.text, completion: {
             hud.dismiss()
             self.refreshControl.endRefreshing()
@@ -129,20 +128,4 @@ class MoviesListViewController: UIViewController, UISearchBarDelegate, UITableVi
             return cell
         } ->> self.moviesListTableView
     }
-    
-    private func findHairlineImageViewUnder(view: UIView) -> UIImageView? {
-        if (view.isKindOfClass(UIImageView) && view.bounds.size.height <= 1.0) {
-            return view as? UIImageView
-        }
-        
-        for subview in view.subviews {
-            let imageView = self.findHairlineImageViewUnder(subview as UIView)
-            if imageView != nil {
-                return imageView
-            }
-        }
-        return nil
-    }
-    
-
 }
